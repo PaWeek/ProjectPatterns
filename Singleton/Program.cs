@@ -15,8 +15,6 @@ namespace Singleton
             {
                 int drawnnumber = random.Next();
 
-                //EventLog log = new EventLog();
-                //log.AddEvent("The number was drawn " + drawnnumber.ToString());
                 EventLog.AddEvent("The number was drawn " + drawnnumber.ToString());
             }
         }

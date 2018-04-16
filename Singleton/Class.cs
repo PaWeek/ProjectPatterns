@@ -4,7 +4,6 @@ namespace Singleton
     {
         public Class()
         {
-            //new EventLog().AddEvent("Class instances were created.");
             EventLog.AddEvent("Class instances were created.");
         }
 
