@@ -2,48 +2,45 @@ using System;
 
 namespace Adapter
 {
-    public class RegularRectangle : Rectangle, IRegularPolygon
+    public class RegularRectangle : RegularPolygon
     {
-        private static Point CalculateTopLeftCorner(Point center, float lengthOfSides)
+        private Rectangle rectangle;
+
+        public RegularRectangle(Rectangle rectangle) 
+            : base(CalculateCenter(rectangle.topLeftCorner, rectangle.bottomRightCorner), 4,
+                CalculateLengthOfSides(rectangle.topLeftCorner, rectangle.bottomRightCorner))
         {
-            return new Point(center.X - lengthOfSides / 2, center.Y - lengthOfSides / 2);
+            this.rectangle = rectangle;
+        }
+        public static Point CalculateCenter(Point topLeftCorner, Point bottomRightCorner)
+        {
+            return new Point((topLeftCorner.X + bottomRightCorner.X) / 2, (topLeftCorner.Y + bottomRightCorner.Y) / 2);
         }
 
-        private static Point CalculateBottomRightCorner(Point center, float lengthOfSides)
+        public static float CalculateLengthOfSides(Point topLeftCorner, Point bottomRightCorner)
         {
-            return new Point(center.X + lengthOfSides / 2, center.Y + lengthOfSides / 2);
-        }
+            float width = bottomRightCorner.X - topLeftCorner.X;
+            float height = bottomRightCorner.Y - topLeftCorner.Y;
 
-        public RegularRectangle(Point center, float lengthOfSides) 
-            : base(CalculateTopLeftCorner(center, lengthOfSides), CalculateBottomRightCorner( center, lengthOfSides))
-        {}
-
-        public Point Center 
-        { 
-            get
+            if(width != height)
             {
-                return new Point((topLeftCorner.X + bottomRightCorner.X) / 2, (topLeftCorner.Y + bottomRightCorner.Y) / 2);
+                throw new ArgumentException("This rectangle is not regular");
+            }
+            else 
+            {
+                return width;
             }
         }
 
-        public int NumberOfSides { get { return 4; } }
-
-        public float LengthOfSides { get { return width(); } }
-
-        public float CalculateCircuit()
+        public override float CalculateField()
         {
-            return NumberOfSides * LengthOfSides;
+            return rectangle.CalculateField();
         }
 
-        public new void DisplayParameters()
-        {
-            Console.WriteLine("center: (" + Center.X + ", " + Center.Y + "), number of sides: " + NumberOfSides.ToString() + ", length of sides: " + LengthOfSides.ToString());
-        }
-
-        public new void DisplayFigureName()
+        public override void DisplayFigureName()
         {
             Console.Write("Regular ");
-            base.DisplayFigureName(); 
+            rectangle.DisplayFigureName(); 
         }
     }
 }

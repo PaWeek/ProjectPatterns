@@ -10,9 +10,16 @@ namespace Adapter
             RegularTriangle regularTriangle = new RegularTriangle(centerOfTriangle, 5.0f);
             Client.DisplayInformationsAboutFigure(regularTriangle);
 
-            Point centerOfRectangle = new Point(10.0f, 20.0f);
-            RegularRectangle regularRectangle = new RegularRectangle(centerOfRectangle, 5.0f);
-            Client.DisplayInformationsAboutFigure(regularRectangle);
+            try
+            {
+                Rectangle rectangle = new Rectangle(new Point(10.0f, 10.0f), new Point(20.0f, 20.0f));
+                RegularRectangle regularRectangle = new RegularRectangle(rectangle);
+                Client.DisplayInformationsAboutFigure(regularRectangle);
+            }
+            catch(Exception exception)
+            {
+                Console.WriteLine("Error: " + exception.Message);
+            }
         }
     }
 }

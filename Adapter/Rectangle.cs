@@ -4,8 +4,8 @@ namespace Adapter
 {
     public class Rectangle
     {
-        protected Point topLeftCorner;
-        protected Point bottomRightCorner;
+        public Point topLeftCorner { get; protected set; }
+        public Point bottomRightCorner { get; protected set; }
 
         protected float width()
         {
