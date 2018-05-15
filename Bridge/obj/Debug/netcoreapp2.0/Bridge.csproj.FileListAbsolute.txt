@@ -1,0 +1,10 @@
+C:\Users\toshiba\Desktop\ProjectPatterns\Bridge\bin\Debug\netcoreapp2.0\Bridge.deps.json
+C:\Users\toshiba\Desktop\ProjectPatterns\Bridge\bin\Debug\netcoreapp2.0\Bridge.runtimeconfig.json
+C:\Users\toshiba\Desktop\ProjectPatterns\Bridge\bin\Debug\netcoreapp2.0\Bridge.runtimeconfig.dev.json
+C:\Users\toshiba\Desktop\ProjectPatterns\Bridge\bin\Debug\netcoreapp2.0\Bridge.dll
+C:\Users\toshiba\Desktop\ProjectPatterns\Bridge\bin\Debug\netcoreapp2.0\Bridge.pdb
+C:\Users\toshiba\Desktop\ProjectPatterns\Bridge\obj\Debug\netcoreapp2.0\Bridge.csproj.CoreCompileInputs.cache
+C:\Users\toshiba\Desktop\ProjectPatterns\Bridge\obj\Debug\netcoreapp2.0\Bridge.AssemblyInfoInputs.cache
+C:\Users\toshiba\Desktop\ProjectPatterns\Bridge\obj\Debug\netcoreapp2.0\Bridge.AssemblyInfo.cs
+C:\Users\toshiba\Desktop\ProjectPatterns\Bridge\obj\Debug\netcoreapp2.0\Bridge.dll
+C:\Users\toshiba\Desktop\ProjectPatterns\Bridge\obj\Debug\netcoreapp2.0\Bridge.pdb
